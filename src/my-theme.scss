@@ -1,13 +1,15 @@
 @use '@angular/material' as mat;
 @import '~@angular/material/theming';
+@import 'variables';
 
 //FUENTES
 $fontRobot: 'Roboto, sans-serif';
 $fontMonserrat: 'Monserrat , sans-serif';
 
+
 $custom-typography-config: mat.define-typography-config(
   $font-family: $fontMonserrat,
-  $headline: mat.define-typography-level(32px, 120%, 600, $fontRobot),
+  $headline: mat.define-typography-level(50px, 120%, 600, $fontRobot),
   $title: mat.define-typography-level(26px, 120%, 600, $fontRobot),
   $subheading-1: mat.define-typography-level(20px, 120%, 600, $fontRobot),
   $subheading-2: mat.define-typography-level(16px, 120%, 600, $fontRobot)
@@ -25,7 +27,7 @@ $my-primary-color: (
   200 : #8a9cb1,
   300 : #5b7492,
   400 : #38577a,
-  500 : #153963,
+  500 : $blue,
   600 : #12335b,
   700 : #0f2c51,
   800 : #0c2447,
@@ -58,7 +60,7 @@ $my-accent-color: (
     200 : #eb8fa8,
     300 : #e26285,
     400 : #dc416b,
-    500 : #d61f51,
+    500 : $pink,
     600 : #d11b4a,
     700 : #cc1740,
     800 : #c61237,
@@ -93,7 +95,7 @@ $my-warn-color: (
   200 : #ffb399,
   300 : #ff9470,
   400 : #ff7d52,
-  500 : #ff6633,
+  500 : $orange,
   600 : #ff5e2e,
   700 : #ff5327,
   800 : #ff4920,

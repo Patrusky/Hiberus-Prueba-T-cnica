@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-//@import './assets/styles/my-theme.scss' ;
+@import 'variables';
 
 html, body {
   height: 100%;
@@ -9,7 +9,7 @@ html, body {
 .content{
   margin: 20px;
 }
-/* h1,h2{
-  color: $primary;
-} */
 
+.temp {
+  color: $pink;
+}
