@@ -1,0 +1,15 @@
+@import '../../../variables.scss';
+
+.background-blue{
+  background-image: url(../../../assets/images/fondoAzul.jpg);
+  background-color: $blue;
+  background-size: cover;
+  height: 200%;
+}
+.titles h1, .titles h4{
+  color: rgb(250, 216, 222);
+}
+.titles{
+  text-align: center;
+  padding: 20%;
+}

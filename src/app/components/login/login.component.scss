@@ -1,0 +1,23 @@
+@import '../../../variables.scss';
+:host{
+  display: flex;
+  justify-content: center;
+  margin: 100px 0px;
+}
+mat-card-title, mat-card-content{
+  display: flex;
+  justify-content: center;
+}
+mat-card-title{
+  color: $blue;
+  font-size: x-large;
+}
+mat-form-field{
+  width: 100%;
+  min-width: 200px;
+}
+button{
+  width: 100%;
+  color: rgb(250, 216, 222);
+}
+

@@ -1,4 +1,4 @@
-//@import 'my-theme';
+@import '../variables.scss';
 
 .example-spacer {
   flex: 1 1 auto;
@@ -7,4 +7,10 @@
   color: $primary
 } */
 
-
+mat-grid-tile {
+  background-color : $blue;
+  color:antiquewhite
+}
+.logo{
+  width: 35%;
+}
