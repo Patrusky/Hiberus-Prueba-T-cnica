@@ -6,10 +6,20 @@
   background-size: cover;
   height: 200%;
 }
-.titles h1, .titles h4{
-  color: rgb(250, 216, 222);
+.home .titles h1,.home .titles h4{
+  color: rgb(251, 245, 246);
 }
-.titles{
+.home .titles{
   text-align: center;
   padding: 20%;
+}
+.home .buttons{
+  display: flex;
+  justify-content: center;
+}
+button{
+  min-width: 30%;
+  padding: 5px;
+  text-align: center;
+  margin: 10px;
 }

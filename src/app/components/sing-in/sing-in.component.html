@@ -1,0 +1,24 @@
+<mat-card>
+  <mat-card-title>Sing In</mat-card-title>
+  <mat-card-content>
+    <form >
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput type="text" placeholder="username" name="username" formControlName="email">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input matInput type="text" placeholder="lastName" name="lastName" formControlName="email">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="text" placeholder="Email" name="email" formControlName="email">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="Password" name="password" [(ngModel)]="password">
+      </mat-form-field>
+      <button mat-raised-button color="warn" type="submit">Login</button>
+    </form>
+  </mat-card-content>
+</mat-card>
