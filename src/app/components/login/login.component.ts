@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { AuthService } from '../../services/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,16 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+    email: string = "";
+    password: string = "";
 
-  email:string = '';
-  password:string = '';
-
-  /* userForm = new FormGroup([
-    email
-  ])  */
-  constructor() { }
+  constructor(private authService:AuthService) { }
 
   ngOnInit(): void {
   }
+
+  login(){
+    this.authService.login(this.email, this.password).subscribe((rta) =>{
+      console.log('token',rta);
+    }, (err: any) => {
+      console.log("ERROR", err);
+    })
+  }
+
 
 }

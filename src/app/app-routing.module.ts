@@ -2,12 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 
-const routes: Routes = [
+import { SingInComponent } from './components/sing-in/sing-in.component';
+import { LoginComponent } from './components/login/login.component';
+import { AppComponent } from './app.component';
 
-  {
-    path: '**',
-    component: NotFoundComponent
-  }
+const routes: Routes = [
+  {path: '', component: AppComponent, pathMatch: 'full'},
+  {path: 'singIn', component: SingInComponent},
+  {path: 'login', component: LoginComponent},
+  {path: '**',component: NotFoundComponent}
 ];
 
 @NgModule({

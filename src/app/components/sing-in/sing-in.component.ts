@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-//import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CreateUserDto } from 'src/app/models/users.model';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-sing-in',
@@ -8,14 +13,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingInComponent implements OnInit {
 
-  username:string ='';
-  lastName: string ='';
-  email:string = '';
-  password:string = '';
+  usersForm = new FormGroup({
+    name: new FormControl(''),
+    surname: new FormControl(''),
+    email: new FormControl(''),
+    password: new FormControl('')
+  })
 
-  constructor() { }
+  constructor(private usersService:UsersService) { }
 
   ngOnInit(): void {
+  }
+
+  singIn(){
+    this.usersService.createUser(this.usersForm.value).subscribe(data=>{
+      console.log('Creado',data);
+    }, err => {
+      console.log("ERROR", err);
+    })
   }
 
 }

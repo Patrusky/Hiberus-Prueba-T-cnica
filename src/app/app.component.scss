@@ -1,11 +1,9 @@
 @import '../variables.scss';
 
+//navbar
 .example-spacer {
   flex: 1 1 auto;
 }
-/* h1{
-  color: $primary
-} */
 
 mat-grid-tile {
   background-color : $blue;
@@ -13,4 +11,29 @@ mat-grid-tile {
 }
 .logo{
   width: 35%;
+}
+
+//Body
+.background-blue{
+  background-image: url(../assets/images/fondoAzul.jpg);
+  background-color: $blue;
+  background-size: cover;
+  height: 300%;
+}
+.home .titles h1,.home .titles h4{
+  color: rgb(251, 245, 246);
+}
+.home .titles{
+  text-align: center;
+  padding: 20%;
+}
+.home .buttons{
+  display: flex;
+  justify-content: center;
+}
+button{
+  min-width: 30%;
+  padding: 5px;
+  text-align: center;
+  margin: 10px;
 }
