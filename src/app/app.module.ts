@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { Route } from '@angular/router';
+import { TokenInterceptor } from './interceptor/token.interceptor';
 
 //Components
 
@@ -56,3 +57,6 @@ import { UsersComponent } from './components/users/users.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+/* providers: [
+  { provide: HTTP_INTERCEPTORS, useClass:TokenInterceptor, multi: true}
+], */

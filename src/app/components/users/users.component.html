@@ -1,1 +1,11 @@
-<p>users works!</p>
+<div class="content-fluid white">
+  <h2>Listado de usuarios</h2>
+<div *ngFor="let user of users">
+  <p>{{user.name}}</p>
+</div>
+<div>
+  <button mat-raised-button color="warn" type="submit" (click)="logout()">Logout</button>
+</div>
+</div>
+
+

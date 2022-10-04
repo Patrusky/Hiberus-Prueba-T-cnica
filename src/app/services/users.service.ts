@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Users, CreateUserDto } from '../models/users.model';
-import { Observable } from "rxjs";
+import { map, Observable } from "rxjs";
+import { TokenService } from './token.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,10 @@ export class UsersService {
   private authUrl =`${environment.API_URL}auth/sign-up`;
   private userUrl =`${environment.API_URL}users`;
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private tokenService:TokenService
+    ) {
 
 
    }
@@ -31,7 +35,12 @@ export class UsersService {
 
   }
 
-  getAll(dto: CreateUserDto){
-    return this.http.get<Users[]>(this.userUrl);
+  getAll(): Observable<any>{
+    let token = this.tokenService.getToken();
+    const headers = new HttpHeaders()
+    .set('Authorization', `Bearer ${token}`)
+    .set('Content-type', 'application/json');
+     console.log(headers);
+    return this.http.get<Users>(`${this.userUrl}`, {headers});
 }
 }
