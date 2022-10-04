@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Users, CreateUserDto } from '../models/users.model';
 import { Observable } from "rxjs";
@@ -19,6 +19,15 @@ export class UsersService {
    createUser(dto: CreateUserDto): Observable<any>{
     console.log(dto);
       return this.http.post(this.authUrl, dto);
+
+  }
+  profile(token: string) {
+
+    const headers = new HttpHeaders();
+    headers.set('Authorization', `Bearer ${token}`);
+    headers.set('Content-type', 'application/json');
+     console.log(headers);
+    return this.http.get<Users>(`${this.userUrl}/me`, {headers});
 
   }
 
