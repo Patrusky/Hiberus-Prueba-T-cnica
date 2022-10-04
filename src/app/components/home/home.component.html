@@ -1,12 +1,18 @@
 <div class="content-fluid background-blue home">
   <div class="titles">
     <h1>Bienvenido a la prueba técnica</h1>
-    <h4>Patricia Antelo</h4>
+    <h4> de Patricia Antelo</h4>
     <div class="buttons">
-      <button mat-raised-button color="warn">Login</button>
-      <button mat-raised-button color="warn">Sing in</button>
+      <button mat-raised-button color="warn" (click)="registro=false">Login</button>
+      <button mat-raised-button color="warn" (click)="registro=true">Sing in</button>
     </div>
   </div>
-  <app-login></app-login>
-  <app-sing-in></app-sing-in>
+  <div class="content-fluid components-box background-blue">
+    <div *ngIf="!registro">
+      <app-login></app-login>
+    </div>
+    <div *ngIf="registro">
+      <app-sing-in></app-sing-in>
+    </div>
+  </div>
 </div>

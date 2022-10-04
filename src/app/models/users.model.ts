@@ -7,3 +7,4 @@ export interface Users {
 }
 
 export interface CreateUserDto extends Omit<Users, 'id'>{}
+export interface UpdateUserDto extends Partial<CreateUserDto> { }

@@ -2,3 +2,34 @@
   color: rgb(253, 249, 249);
   padding: 20px;
 }
+.background-blue{
+  background-image: url(../../../assets/images/fondoAzul.jpg);
+  background-size: cover;
+  height: 100%;
+}
+.cabecera div, .userList div{
+  display:inline-block;
+}
+.boton{
+  justify-content: start;
+  width: 10%;
+}
+.titleList{
+  width: 90%;
+}
+.userList{
+  padding: 10px;
+}
+.user{
+  width: 15%;
+}
+.buttonList{
+  justify-content: end;
+  width: 85%;
+}
+button{
+  margin: 0px 5px ;
+}
+table{
+  width: 100%;
+}

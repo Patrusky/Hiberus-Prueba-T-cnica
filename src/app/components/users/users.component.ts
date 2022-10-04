@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Users } from 'src/app/models/users.model';
-import { UsersService } from 'src/app/services/users.service';
-
+import { UsersService} from 'src/app/services/users.service';
+import { TokenService } from 'src/app/services/token.service';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -10,9 +10,13 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class UsersComponent implements OnInit {
   users: Users[] = [];
+  user: Users[] = [];
+  displayedColumns: string[] = ['name', 'surname', 'email'];
 
-
-  constructor(private usersService:UsersService, public router: Router) {
+  constructor(
+    private usersService:UsersService,
+    private tokenService:TokenService,
+     public router: Router) {
 
   }
 
@@ -21,8 +25,22 @@ export class UsersComponent implements OnInit {
       this.users = data.items;
     })
   }
+  getUser(){
+    /* this.usersService.getOne(id).subscribe((data)=>{
+      this.user = data.items.id
+    }) */
+  }
+  updateUser(){
+    /* this.usersService.edit().subscribe((data)=>{
+      this.id =data.items.id
+    }) */
+  }
+  deleteUser(){
+    /* this.usersService.delete(id) */
+  }
 
   logout(){
+    this.tokenService.singOut();
     this.router.navigate(['/'])
   }
 }

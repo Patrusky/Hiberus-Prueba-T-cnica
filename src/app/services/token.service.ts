@@ -15,4 +15,8 @@ export class TokenService {
     const token = localStorage.getItem('token');
     return token;
   }
+
+  singOut(){
+    localStorage.clear();
+  }
 }

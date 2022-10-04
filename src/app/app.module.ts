@@ -14,6 +14,8 @@ import { TokenInterceptor } from './interceptor/token.interceptor';
 import { LoginComponent } from './components/login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './components/home/home.component';
+import { SingInComponent } from './components/sing-in/sing-in.component';
+import { UsersComponent } from './components/users/users.component';
 
 //Material
 import { MaterialModule } from './material/material.module';
@@ -23,8 +25,7 @@ import { MatCardModule} from '@angular/material/card';
 import { MatGridListModule} from '@angular/material/grid-list';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
-import { SingInComponent } from './components/sing-in/sing-in.component';
-import { UsersComponent } from './components/users/users.component';
+import { MatTableModule } from '@angular/material/table';
 
 
 
@@ -51,12 +52,13 @@ import { UsersComponent } from './components/users/users.component';
     MatGridListModule,
     MatCardModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass:TokenInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-/* providers: [
-  { provide: HTTP_INTERCEPTORS, useClass:TokenInterceptor, multi: true}
-], */
+/*  */
