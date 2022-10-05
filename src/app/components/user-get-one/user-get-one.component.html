@@ -1,0 +1,15 @@
+<div class="containerUser">
+  <div>
+    <mat-card class="card">
+      <mat-card-subtitle>Usuario</mat-card-subtitle>
+      <mat-card-content>
+        <p>Nombre: {{user.name}}</p>
+        <p>Apellido: {{user.surname}}</p>
+        <p>Email: {{ user.email }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="boton">
+    <button mat-raised-button color="warn" type="submit" (click)="back()">Back</button>
+  </div>
+</div>

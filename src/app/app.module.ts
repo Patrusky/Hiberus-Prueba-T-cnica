@@ -15,6 +15,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './components/home/home.component';
 import { SingInComponent } from './components/sing-in/sing-in.component';
 import { UsersComponent } from './components/users/users.component';
+import { UserGetOneComponent } from './components/user-get-one/user-get-one.component';
 
 //Material
 import { MaterialModule } from './material/material.module';
@@ -25,8 +26,9 @@ import { MatGridListModule} from '@angular/material/grid-list';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
-import {MatPaginatorModule} from '@angular/material/paginator';
 import { LogoutComponent } from './components/logout/logout.component';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { LogoutComponent } from './components/logout/logout.component';
     SingInComponent,
     UsersComponent,
     LogoutComponent,
+    UserGetOneComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,7 @@ import { LogoutComponent } from './components/logout/logout.component';
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
-    MatPaginatorModule
+    MatButtonModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass:TokenInterceptor, multi: true}

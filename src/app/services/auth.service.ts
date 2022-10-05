@@ -23,44 +23,16 @@ export class AuthService {
     console.log('servi',email, password)
     return this.http.post<Auth>(`${this.apiUrl}/log-in`, { email, password })
     .pipe(
-     tap(rta => this.tokenService.setToken(rta.accessToken)),
-     /*  cathError((error: HttpErrorResponse) => {
-        if (error.status === HttpStatusCode.Conflict) {
-          return throwError('Algo esta fallando en el server')
-
-        }
-        if (error.status === HttpStatusCode.NotFound) {
-          return throwError('El usuario no existe');
-        }
-        if (error.status === HttpStatusCode.Unauthorized) {
-          return throwError('No estas autorizado');
-        }
-        return throwError('Ups algo salio mal');
-      }) */
+     tap(rta => this.tokenService.setToken(rta.accessToken))
     )
   }
 
-  profile() {
-    let token = this.tokenService.getToken();
-    console.log("AQUI TOKEN", token);
-
+  getProfile() {
     return this.http.get<Users>(`${this.userUrl}/me`);
 
   }
 
 
-  /* loginAndGet(email: string, password: string) {
-    return this.login(email, password)
-    .pipe(
-      switchMap(() => this.profile()),
-    )
-  } */
-}
-function cathError(arg0: (error: HttpErrorResponse) => any): import("rxjs").OperatorFunction<Auth, any> {
-  throw new Error('Function not implemented.');
 }
 
-function throwError(arg0: string) {
-  throw new Error('Function not implemented.');
-}
 

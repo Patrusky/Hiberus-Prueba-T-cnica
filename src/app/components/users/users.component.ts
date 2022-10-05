@@ -11,7 +11,7 @@ import { TokenService } from 'src/app/services/token.service';
 export class UsersComponent implements OnInit {
   users: Users[] = [];
   user: Users[] = [];
-  displayedColumns: string[] = ['name', 'surname', 'email'];
+  displayedColumns: string[] = ['name', 'surname', 'email', 'actions'];
 
   constructor(
     private usersService:UsersService,
@@ -25,19 +25,11 @@ export class UsersComponent implements OnInit {
       this.users = data.items;
     })
   }
-  getUser(){
-    /* this.usersService.getOne(id).subscribe((data)=>{
-      this.user = data.items.id
-    }) */
+  visibilityUser(id:string){
+    this.router.navigate(['/usergetone/', id]);
   }
-  updateUser(){
-    /* this.usersService.edit().subscribe((data)=>{
-      this.id =data.items.id
-    }) */
-  }
-  deleteUser(){
-    /* this.usersService.delete(id) */
-  }
+
+
 
   logout(){
     this.tokenService.singOut();

@@ -39,8 +39,10 @@ export class UsersService {
 
     return this.http.get<Users>(`${this.userUrl}`);
   }
-  /* getOne(id:string){
+   getOne(id:string){
+    console.log(id)
     return this.http.get<Users>(`${this.userUrl}/${id}`)
+
   }
   edit(id: string, dto: UpdateUserDto) {
     return this.http.put<Users>(`${this.userUrl}/${id}`, dto);
@@ -48,5 +50,5 @@ export class UsersService {
 
   delete(id: string, dto: any) {
     return this.http.delete<boolean>(`${this.userUrl}/${id}`, dto);
-  } */
+  }
 }

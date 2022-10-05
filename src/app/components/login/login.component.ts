@@ -33,11 +33,7 @@ export class LoginComponent implements OnInit {
       console.log("ERROR", err)
     })
   }
-  getProfile(){
-    this.authService.profile().subscribe(profile=>{
-      console.log(profile);
-    })
-  }
+
 
 
 }

@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { CreateUserDto } from './models/users.model';
+import { Users } from './models/users.model';
 
-//import { AuthService } from './services/auth.service';
-import { UsersService } from './services/users.service';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -11,22 +10,10 @@ import { UsersService } from './services/users.service';
 })
 export class AppComponent {
 
-  constructor( private usersService:UsersService){
+  profile: Users | null = null;
+  constructor( private authService:AuthService){
 
   }
 
-  createUser(){
 
-
-    // console.log("EN APP", dto);
-    // this.usersService.create(dto).subscribe(data=>{
-    //   console.log(data);
-    // })
-  }
-  /* login(){
-    this.authService.login({email:'',password:'',})
-    .subscribe((data: any)=>{
-      console.log(data);
-    })
-  } */
 }
