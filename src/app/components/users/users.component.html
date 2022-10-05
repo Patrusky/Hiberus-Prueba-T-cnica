@@ -41,14 +41,7 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-
-
-    <div *ngFor="let user of users" class="userList">
-      <div class="user">
-        <p>{{user | json}}</p>
-      </div>
-
-    </div>
+    <mat-paginator [pageSize]="10"[pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
 
   </div>
 </div>

@@ -5,8 +5,9 @@ import {
   HttpEvent,
   HttpInterceptor
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { TokenService } from '../services/token.service';
+import { catchError } from 'rxjs/operators'
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
@@ -15,10 +16,10 @@ export class TokenInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     request = this.addToken(request);
-    return next.handle(request);
+    return next.handle(request)
   }
 
-  private addToken(request: HttpRequest<unknown>){
+  private addToken(request: HttpRequest<unknown>): HttpRequest<unknown>{
     const token = this.tokenService.getToken();
     if(token){
       const authReq = request.clone({
@@ -28,4 +29,7 @@ export class TokenInterceptor implements HttpInterceptor {
   }
     return request;
   }
+
+
+
 }

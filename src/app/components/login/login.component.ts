@@ -3,6 +3,7 @@ import { AuthService } from '../../services/auth.service';
 import { UsersService } from 'src/app/services/users.service';
 import { TokenService } from 'src/app/services/token.service';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -27,8 +28,10 @@ export class LoginComponent implements OnInit {
       console.log('token1',rta.accessToken);
       this.TokenService.setToken(rta.accessToken);
       this.router.navigate(['/users'])
+      alert('Estas logueado')
     }, (err: any) => {
       console.log("ERROR", err);
+      alert('¡Ups! Algo ha ido mal. Comprueba que el email y el password sean correctos')
     })
   }
   getProfile(){

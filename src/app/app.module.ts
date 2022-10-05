@@ -5,8 +5,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
-import { Route } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TokenInterceptor } from './interceptor/token.interceptor';
 
 //Components
@@ -26,9 +25,7 @@ import { MatGridListModule} from '@angular/material/grid-list';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
-
-
-
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -53,7 +50,8 @@ import { MatTableModule } from '@angular/material/table';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass:TokenInterceptor, multi: true}

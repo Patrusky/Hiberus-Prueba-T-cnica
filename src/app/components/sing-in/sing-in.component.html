@@ -4,21 +4,29 @@
     <form [formGroup]="usersForm">
       <mat-form-field>
         <mat-label>Username</mat-label>
-        <input matInput type="text" placeholder="username" name="name" formControlName="name" >
+        <input matInput type="text" placeholder="username" name="name" formControlName="name">
+        <mat-error *ngIf="myError('name', 'required')">Nombre es requerido</mat-error>
+        <mat-error *ngIf="myError('name', 'minlength')">Mínimo 3 carácteres</mat-error>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Last Name</mat-label>
         <input matInput type="text" placeholder="lastName" name="surname" formControlName="surname">
+        <mat-error *ngIf="myError('surname', 'required')">Nombre requerido</mat-error>
+        <mat-error *ngIf="myError('surname', 'minlength')">Mínimo 3 carácteres</mat-error>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Email</mat-label>
         <input matInput type="text" placeholder="Email" name="email" formControlName="email">
+        <mat-error *ngIf="myError('email', 'required')">Email requerido</mat-error>
+        <mat-error *ngIf="myError('email', 'email')">Revise su email</mat-error>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Password</mat-label>
         <input matInput type="password" placeholder="Password" name="password" formControlName="password">
+        <mat-error *ngIf="myError('password', 'required')">Password requerido</mat-error>
       </mat-form-field>
-      <button mat-raised-button color="warn" type="submit" (click)="singIn()">Login</button>
+      <button mat-raised-button color="warn" type="submit" [disabled]="!usersForm.valid"
+        (click)="singIn()">Login</button>
     </form>
   </mat-card-content>
 </mat-card>
