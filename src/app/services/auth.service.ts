@@ -23,8 +23,8 @@ export class AuthService {
     console.log('servi',email, password)
     return this.http.post<Auth>(`${this.apiUrl}/log-in`, { email, password })
     .pipe(
-      /* tap(rta => this.tokenService.setToken(rta.accessToken)),
-      cathError((error: HttpErrorResponse) => {
+     tap(rta => this.tokenService.setToken(rta.accessToken)),
+     /*  cathError((error: HttpErrorResponse) => {
         if (error.status === HttpStatusCode.Conflict) {
           return throwError('Algo esta fallando en el server')
 
@@ -43,9 +43,6 @@ export class AuthService {
   profile() {
     let token = this.tokenService.getToken();
     console.log("AQUI TOKEN", token);
-    /* const headers = new HttpHeaders()
-    .set('Authorization', `Bearer ${token}`)
-    .set('Content-type', 'application/json'); , {headers: headers}*/
 
     return this.http.get<Users>(`${this.userUrl}/me`);
 

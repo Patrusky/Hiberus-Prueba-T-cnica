@@ -41,6 +41,6 @@ export class UsersComponent implements OnInit {
 
   logout(){
     this.tokenService.singOut();
-    this.router.navigate(['/'])
+    this.router.navigate(['/logout'])
   }
 }

@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
     email: string = "";
     password: string = "";
-
+    hide = true;
 
   constructor(
     private authService:AuthService,
@@ -30,8 +30,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/users'])
       alert('Estas logueado')
     }, (err: any) => {
-      console.log("ERROR", err);
-      alert('¡Ups! Algo ha ido mal. Comprueba que el email y el password sean correctos')
+      console.log("ERROR", err)
     })
   }
   getProfile(){

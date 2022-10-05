@@ -4,7 +4,7 @@
   background-image: url(../../../assets/images/fondoAzul.jpg);
   background-color: $blue;
   background-size: cover;
-  height: 300px;
+  height: 400px;
 }
 .home .titles h1,.home .titles h4{
   color: rgb(251, 245, 246);
@@ -21,8 +21,11 @@ button{
   min-width: 30%;
   padding: 5px;
   text-align: center;
-  margin: 10px;
+  margin-left: 10px;
 }
 .components-box{
-  padding: 20%;
+  background-image: url(../../../assets/images/fondoAzul.jpg);
+  background-color: $blue;
+  background-size: cover;
+  padding: 15% 0% 35% 0%;
 }

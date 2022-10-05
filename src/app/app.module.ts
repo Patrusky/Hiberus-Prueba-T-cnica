@@ -26,6 +26,7 @@ import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     HomeComponent,
     SingInComponent,
     UsersComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,

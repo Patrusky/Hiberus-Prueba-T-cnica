@@ -12,7 +12,7 @@ import { UsersService } from '../../services/users.service';
   styleUrls: ['./sing-in.component.scss']
 })
 export class SingInComponent implements OnInit {
-
+  hide = true;
   usersForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
     surname: new FormControl('', [Validators.required, Validators.minLength(3)]),
